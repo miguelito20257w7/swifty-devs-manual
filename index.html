@@ -310,6 +310,93 @@
   .logo-rule.good h4 { color: #2e8b2e; }
   .logo-rule.good ul li::before { content: "✓"; color: #2e8b2e; }
 
+  /* ─── ZONA DE EXCLUSIÓN ─── */
+  .logo-safety {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+    padding: 60px 50px;
+    background: var(--gray-5);
+    border-radius: 20px;
+    align-items: center;
+  }
+
+  .safety-tag {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 16px;
+  }
+
+  .safety-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 36px);
+    font-weight: 400; letter-spacing: -1px;
+    line-height: 1.1; margin-bottom: 20px;
+  }
+  .safety-title em { font-style: italic; color: var(--orange); }
+
+  .safety-desc {
+    font-size: 14px; font-weight: 300;
+    color: var(--gray-3); line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .safety-desc strong { color: var(--black); font-weight: 500; }
+
+  .safety-specs { display: flex; flex-direction: column; }
+
+  .spec-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    font-size: 13px;
+  }
+  .spec-row:last-child { border-bottom: none; }
+
+  .spec-key { color: var(--gray-3); font-weight: 300; }
+  .spec-val {
+    font-family: var(--font-mono);
+    color: var(--black);
+    font-size: 12px;
+  }
+
+  .safety-visual {
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .safety-outer {
+    position: relative;
+    padding: 56px;
+    border: 1.5px dashed var(--orange);
+    border-radius: 12px;
+    background: var(--white);
+  }
+
+  .safety-inner {
+    border: 1px dashed rgba(0,0,0,0.18);
+    border-radius: 4px;
+    padding: 14px 22px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .safety-mark { width: 120px; height: auto; display: block; }
+
+  .safety-label-x {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--orange);
+    font-weight: 500;
+    background: var(--gray-5);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .safety-top    { top: -12px; left: 50%; transform: translateX(-50%); }
+  .safety-bottom { bottom: -12px; left: 50%; transform: translateX(-50%); }
+  .safety-left   { top: 50%; left: -12px; transform: translateY(-50%); }
+  .safety-right  { top: 50%; right: -12px; transform: translateY(-50%); }
+
   /* ─── PALETA ─── */
   .section-palette {
     background: var(--black);
@@ -729,6 +816,8 @@
     .section-index, .section-logo, .section-type, .section-apps, .section-dont .dont-inner, .voice-inner, .palette-inner { padding: 100px 24px; }
     .section-mv, .section-palette, .section-voice, .section-dont { padding: 100px 24px; }
     .logo-grid, .palette-grid { grid-template-columns: 1fr 1fr; }
+    .logo-safety { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; }
+    .safety-outer { padding: 44px; }
     .type-grid { grid-template-columns: 1fr; }
     .voice-pillars { grid-template-columns: 1fr 1fr; }
     .voice-examples { grid-template-columns: 1fr; }
@@ -915,12 +1004,45 @@
     </div>
   </div>
 
+  <div class="logo-safety reveal">
+    <div class="safety-text">
+      <p class="safety-tag">Zona de exclusión</p>
+      <h3 class="safety-title">Márgenes de <em>seguridad.</em></h3>
+      <p class="safety-desc">Alrededor del isotipo se reserva un margen libre mínimo equivalente a <strong>X</strong>, donde <strong>X = la altura del propio isotipo</strong>. Ningún elemento — texto, imagen, borde u otro logo — debe invadir esta zona.</p>
+      <div class="safety-specs">
+        <div class="spec-row">
+          <span class="spec-key">Unidad</span>
+          <span class="spec-val">X = altura del isotipo</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Margen mínimo</span>
+          <span class="spec-val">1X en los cuatro lados</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Margen ideal</span>
+          <span class="spec-val">2X si hay espacio</span>
+        </div>
+      </div>
+    </div>
+    <div class="safety-visual">
+      <div class="safety-outer">
+        <div class="safety-inner">
+          <img src="LOGO_MARCa-removebg-preview.png" class="safety-mark" alt="">
+        </div>
+        <span class="safety-label-x safety-top">X</span>
+        <span class="safety-label-x safety-right">X</span>
+        <span class="safety-label-x safety-bottom">X</span>
+        <span class="safety-label-x safety-left">X</span>
+      </div>
+    </div>
+  </div>
+
   <div class="logo-rules reveal">
     <div class="logo-rule good">
       <h4>✓ Usos correctos</h4>
       <ul>
         <li>Sobre fondos blancos, negros o grises de la paleta oficial</li>
-        <li>Con la zona de exclusión respetada (altura de la "S" en todos los lados)</li>
+        <li>Con la zona de exclusión respetada (1X = altura del isotipo en los cuatro lados)</li>
         <li>En proporciones originales, sin escalar de forma no uniforme</li>
         <li>Usando siempre Playfair Display como tipografía del wordmark</li>
       </ul>
