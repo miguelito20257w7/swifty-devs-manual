@@ -397,6 +397,97 @@
   .safety-left   { top: 50%; left: -12px; transform: translateY(-50%); }
   .safety-right  { top: 50%; right: -12px; transform: translateY(-50%); }
 
+  /* ─── VARIANTES DEL SISTEMA ─── */
+  .logo-system-head {
+    margin-bottom: 28px;
+  }
+
+  .logo-system {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+
+  .variant-card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 48px 32px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .variant-stage {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 130px;
+    margin-bottom: 28px;
+    width: 100%;
+  }
+
+  .variant-meta {
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 18px;
+    width: 100%;
+  }
+
+  .variant-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gray-4);
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .variant-name {
+    font-size: 15px; font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .variant-use {
+    font-size: 12px; font-weight: 300;
+    color: var(--gray-3); line-height: 1.55;
+  }
+
+  .v-isotype img { width: 96px; height: auto; display: block; }
+
+  .v-wordmark {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 400; letter-spacing: -0.5px;
+    color: var(--black);
+  }
+  .v-wordmark span { color: var(--orange); }
+
+  .v-horizontal {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .v-horizontal img { width: 62px; height: auto; display: block; }
+  .v-horizontal .vh-text {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.4vw, 30px);
+    font-weight: 400; letter-spacing: -0.5px;
+  }
+  .v-horizontal .vh-text span { color: var(--orange); }
+
+  .v-vertical {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 10px;
+  }
+  .v-vertical img { width: 70px; height: auto; display: block; }
+  .v-vertical .vv-text {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400; letter-spacing: -0.5px;
+  }
+  .v-vertical .vv-text span { color: var(--orange); }
+
   /* ─── PALETA ─── */
   .section-palette {
     background: var(--black);
@@ -818,6 +909,7 @@
     .logo-grid, .palette-grid { grid-template-columns: 1fr 1fr; }
     .logo-safety { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; }
     .safety-outer { padding: 44px; }
+    .logo-system { grid-template-columns: 1fr; }
     .type-grid { grid-template-columns: 1fr; }
     .voice-pillars { grid-template-columns: 1fr 1fr; }
     .voice-examples { grid-template-columns: 1fr; }
@@ -1033,6 +1125,60 @@
         <span class="safety-label-x safety-right">X</span>
         <span class="safety-label-x safety-bottom">X</span>
         <span class="safety-label-x safety-left">X</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo-system-head reveal">
+    <p class="safety-tag">Sistema de logo</p>
+    <h3 class="safety-title">Las <em>variantes.</em></h3>
+    <p class="safety-desc" style="max-width:620px">Cuatro composiciones a partir del mismo isotipo y wordmark. Cada una tiene su contexto; cuando dudes, usá el lockup horizontal.</p>
+  </div>
+
+  <div class="logo-system">
+    <div class="variant-card reveal">
+      <div class="variant-stage v-horizontal">
+        <img src="LOGO_MARCa-removebg-preview.png" alt="">
+        <span class="vh-text">Swifty<span>.</span>Devs</span>
+      </div>
+      <div class="variant-meta">
+        <p class="variant-tag">01 · Principal</p>
+        <p class="variant-name">Lockup horizontal</p>
+        <p class="variant-use">Versión principal del sistema. Headers de sitio web, cabeceras de documentos, firmas de email.</p>
+      </div>
+    </div>
+
+    <div class="variant-card reveal" style="transition-delay:.07s">
+      <div class="variant-stage v-vertical">
+        <img src="LOGO_MARCa-removebg-preview.png" alt="">
+        <span class="vv-text">Swifty<span>.</span>Devs</span>
+      </div>
+      <div class="variant-meta">
+        <p class="variant-tag">02 · Secundaria</p>
+        <p class="variant-name">Lockup vertical</p>
+        <p class="variant-use">Espacios cuadrados o de orientación vertical. Avatares de perfil, posts de redes sociales, banners.</p>
+      </div>
+    </div>
+
+    <div class="variant-card reveal" style="transition-delay:.14s">
+      <div class="variant-stage v-isotype">
+        <img src="LOGO_MARCa-removebg-preview.png" alt="">
+      </div>
+      <div class="variant-meta">
+        <p class="variant-tag">03 · Reducida</p>
+        <p class="variant-name">Isotipo solo</p>
+        <p class="variant-use">Cuando la marca ya es reconocida. App icon, favicon, watermark, marca de agua, marcas de check técnico.</p>
+      </div>
+    </div>
+
+    <div class="variant-card reveal" style="transition-delay:.21s">
+      <div class="variant-stage">
+        <span class="v-wordmark">Swifty<span>.</span>Devs</span>
+      </div>
+      <div class="variant-meta">
+        <p class="variant-tag">04 · Editorial</p>
+        <p class="variant-name">Wordmark solo</p>
+        <p class="variant-use">Contextos editoriales, créditos, footers minimalistas o lugares donde el isotipo resulta redundante.</p>
       </div>
     </div>
   </div>
