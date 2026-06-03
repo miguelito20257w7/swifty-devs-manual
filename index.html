@@ -901,6 +901,27 @@
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* ─── BOTÓN PDF ─── */
+  .pdf-btn {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    z-index: 200;
+    background: var(--black); color: var(--white);
+    border: none; cursor: pointer;
+    padding: 14px 22px;
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.3px;
+    display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .pdf-btn:hover { background: var(--orange); transform: translateY(-2px); }
+  .pdf-btn .pdf-arrow {
+    font-family: var(--font-mono); font-size: 14px; line-height: 1;
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     nav { padding: 0 24px; }
@@ -921,9 +942,66 @@
     .dont-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 12px; text-align: center; }
   }
+
+  /* ─── PRINT / PDF ─── */
+  @media print {
+    *, *::before, *::after {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+      animation: none !important;
+      transition: none !important;
+    }
+
+    html, body { overflow: visible !important; background: var(--white); }
+
+    nav, .pdf-btn { display: none !important; }
+
+    .reveal { opacity: 1 !important; transform: none !important; }
+
+    .cover-title, .cover-mark, .cover-tag, .cover-sub, .cover-meta {
+      opacity: 1 !important;
+    }
+
+    .cover {
+      min-height: auto !important;
+      padding: 80px 40px !important;
+      page-break-after: always;
+    }
+    .cover-meta { position: static !important; margin-top: 48px; }
+
+    .section-index,
+    .section-mv,
+    .section-logo,
+    .section-palette,
+    .section-type,
+    .section-voice,
+    .section-apps,
+    .section-dont,
+    .section-close {
+      page-break-before: always;
+      padding: 60px 40px !important;
+    }
+
+    .logo-card, .palette-swatch, .type-card, .channel-card,
+    .pillar, .variant-card, .dont-item, .mv-block, .voice-ex,
+    .logo-safety, .type-hierarchy {
+      page-break-inside: avoid;
+    }
+
+    footer { page-break-before: auto; }
+
+    @page { margin: 12mm; size: A4; }
+  }
 </style>
 </head>
 <body>
+
+<!-- BOTÓN PDF -->
+<button class="pdf-btn" onclick="window.print()" title="Descargar como PDF" aria-label="Descargar como PDF">
+  <span class="pdf-arrow">↓</span>
+  Descargar PDF
+</button>
 
 <!-- NAV -->
 <nav id="top-nav">
