@@ -379,7 +379,10 @@
     display: flex; align-items: center; justify-content: center;
   }
 
-  .safety-mark { width: 360px; height: auto; display: block; }
+  .safety-mark {
+    width: 380px; height: 220px; display: block;
+    background: url('LOGO_MARCa-removebg-preview.png') center / 175% auto no-repeat;
+  }
 
   .safety-label-x {
     position: absolute;
@@ -909,7 +912,7 @@
     .logo-grid, .palette-grid { grid-template-columns: 1fr 1fr; }
     .logo-safety { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; }
     .safety-outer { padding: 24px; }
-    .safety-mark { width: 240px; }
+    .safety-mark { width: 260px; height: 150px; }
     .logo-system { grid-template-columns: 1fr; }
     .type-grid { grid-template-columns: 1fr; }
     .voice-pillars { grid-template-columns: 1fr 1fr; }
@@ -1120,7 +1123,7 @@
     <div class="safety-visual">
       <div class="safety-outer">
         <div class="safety-inner">
-          <img src="LOGO_MARCa-removebg-preview.png" class="safety-mark" alt="">
+          <div class="safety-mark" role="img" aria-label="Isotipo Swifty Devs"></div>
         </div>
         <span class="safety-label-x safety-top">X</span>
         <span class="safety-label-x safety-right">X</span>
