@@ -901,6 +901,180 @@
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* ─── TOKENS EN CÓDIGO ─── */
+  .section-tokens {
+    background: var(--black);
+    padding: 140px 48px;
+  }
+
+  .tokens-inner {
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  .tokens-header {
+    margin-bottom: 60px;
+  }
+
+  .tokens-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 400; letter-spacing: -1.5px;
+    color: var(--white);
+  }
+
+  .tokens-header p {
+    font-size: 14px; font-weight: 300;
+    color: var(--gray-3); line-height: 1.7;
+    max-width: 580px; margin-top: 20px;
+  }
+
+  .tokens-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .token-card {
+    background: var(--gray-1);
+    border-radius: 16px;
+    padding: 28px 28px 32px;
+    overflow: hidden;
+  }
+
+  .token-lang {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .token-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .token-dot.swift { background: #FA7343; }
+  .token-dot.css   { background: #2965F1; }
+
+  .token-name {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--gray-4);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .token-code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--gray-4);
+    white-space: pre;
+    overflow-x: auto;
+    margin: 0;
+  }
+
+  .tk-key { color: #FF8C5A; }
+  .tk-typ { color: #FFD166; }
+  .tk-str { color: #A6D49F; }
+  .tk-num { color: #79C0FF; }
+  .tk-com { color: var(--gray-3); font-style: italic; }
+  .tk-prop { color: #C9D1D9; }
+
+  /* ─── APP ICON SYSTEM ─── */
+  .app-icon-block {
+    margin-top: 60px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .app-icon-head {
+    margin-bottom: 40px;
+  }
+
+  .app-icon-head h3 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 400; letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .app-icon-head h3 em { font-style: italic; color: var(--orange); }
+
+  .app-icon-head p {
+    font-size: 14px; font-weight: 300;
+    color: var(--gray-3); line-height: 1.65;
+    max-width: 560px;
+  }
+
+  .app-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: end;
+  }
+
+  .app-icon-card {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 20px;
+    padding: 36px 20px 24px;
+    background: var(--gray-5);
+    border-radius: 18px;
+  }
+
+  .app-icon {
+    width: 180px; height: 180px;
+    border-radius: 22.5%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow:
+      0 14px 32px rgba(0,0,0,0.18),
+      0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .app-icon.dark   { background: var(--black); }
+  .app-icon.orange { background: linear-gradient(160deg, #FF8C5A 0%, #FF6B35 100%); }
+  .app-icon.light  { background: var(--white); border: 1px solid rgba(0,0,0,0.05); }
+
+  .app-icon-bird {
+    width: 70%; height: auto;
+  }
+  .app-icon.orange .app-icon-bird {
+    filter: brightness(0) invert(1);
+  }
+
+  .app-icon-meta { text-align: center; }
+  .app-icon-meta p {
+    font-size: 12px; font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .app-icon-meta span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gray-3);
+    letter-spacing: 1px;
+  }
+
+  .app-icon-sizes {
+    margin-top: 32px;
+    padding: 22px 28px;
+    background: var(--gray-5);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+
+  .sizes-label {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .sizes-list {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gray-3);
+    letter-spacing: 0.5px;
+  }
+
   /* ─── BOTÓN PDF ─── */
   .pdf-btn {
     position: fixed;
@@ -941,6 +1115,10 @@
     .voice-examples { grid-template-columns: 1fr; }
     .apps-channels { grid-template-columns: 1fr; }
     .dont-grid { grid-template-columns: 1fr; }
+    .section-tokens { padding: 100px 24px; }
+    .tokens-grid { grid-template-columns: 1fr; }
+    .app-icon-grid { grid-template-columns: 1fr; }
+    .app-icon { width: 150px; height: 150px; }
     footer { flex-direction: column; gap: 12px; text-align: center; }
   }
 
@@ -976,6 +1154,7 @@
     .section-logo,
     .section-palette,
     .section-type,
+    .section-tokens,
     .section-voice,
     .section-apps,
     .section-dont,
@@ -986,9 +1165,11 @@
 
     .logo-card, .palette-swatch, .type-card, .channel-card,
     .pillar, .variant-card, .dont-item, .mv-block, .voice-ex,
-    .logo-safety, .type-hierarchy {
+    .logo-safety, .type-hierarchy, .token-card, .app-icon-card {
       page-break-inside: avoid;
     }
+
+    .app-icon-block { page-break-before: always; padding-top: 30px !important; }
 
     footer { page-break-before: auto; }
 
@@ -1020,6 +1201,7 @@
     <li><a href="#logo">Logo</a></li>
     <li><a href="#colores">Colores</a></li>
     <li><a href="#tipo">Tipografía</a></li>
+    <li><a href="#tokens">Código</a></li>
     <li><a href="#voz">Voz</a></li>
     <li><a href="#aplicaciones">Aplicaciones</a></li>
   </ul>
@@ -1084,6 +1266,14 @@
       </div>
       <div class="index-dot"></div>
       <span class="index-page">Jerarquía y fuentes</span>
+    </a></li>
+    <li><a href="#tokens" class="index-item reveal" style="transition-delay:.18s">
+      <div class="index-item-left">
+        <span class="index-num">∞</span>
+        <span class="index-name">Sistema en código</span>
+      </div>
+      <div class="index-dot"></div>
+      <span class="index-page">Tokens en Swift y CSS</span>
     </a></li>
     <li><a href="#voz" class="index-item reveal" style="transition-delay:.2s">
       <div class="index-item-left">
@@ -1431,6 +1621,72 @@
   </div>
 </section>
 
+<!-- TOKENS EN CÓDIGO -->
+<section id="tokens" class="section-tokens">
+  <div class="tokens-inner">
+    <div class="tokens-header reveal">
+      <p class="section-number" style="color:var(--gray-3)">∞</p>
+      <p class="section-label">Sistema en código</p>
+      <h2>De la marca al <em>producto.</em></h2>
+      <p>La paleta y la tipografía expresadas como tokens reales, listos para copiar. Si la marca no llega al código, no llega al producto.</p>
+    </div>
+
+    <div class="tokens-grid">
+      <div class="token-card reveal">
+        <div class="token-lang">
+          <span class="token-dot swift"></span>
+          <span class="token-name">Colors.swift · SwiftUI</span>
+        </div>
+<pre class="token-code"><span class="tk-key">import</span> <span class="tk-typ">SwiftUI</span>
+
+<span class="tk-key">extension</span> <span class="tk-typ">Color</span> {
+  <span class="tk-com">// Neutrales</span>
+  <span class="tk-key">static let</span> <span class="tk-prop">carbon</span>      = <span class="tk-typ">Color</span>(<span class="tk-str">"Carbon"</span>)
+  <span class="tk-key">static let</span> <span class="tk-prop">obsidian</span>    = <span class="tk-typ">Color</span>(<span class="tk-str">"Obsidian"</span>)
+  <span class="tk-key">static let</span> <span class="tk-prop">ivory</span>       = <span class="tk-typ">Color</span>(<span class="tk-str">"Ivory"</span>)
+
+  <span class="tk-com">// Acento</span>
+  <span class="tk-key">static let</span> <span class="tk-prop">swiftOrange</span> = <span class="tk-typ">Color</span>(<span class="tk-str">"SwiftOrange"</span>)
+  <span class="tk-key">static let</span> <span class="tk-prop">glow</span>        = <span class="tk-typ">Color</span>(<span class="tk-str">"Glow"</span>)
+}
+
+<span class="tk-key">extension</span> <span class="tk-typ">Font</span> {
+  <span class="tk-key">static let</span> <span class="tk-prop">display</span> = <span class="tk-typ">Font</span>.<span class="tk-prop">custom</span>(<span class="tk-str">"PlayfairDisplay-Regular"</span>, size: <span class="tk-num">32</span>)
+  <span class="tk-key">static let</span> <span class="tk-prop">body</span>    = <span class="tk-typ">Font</span>.<span class="tk-prop">custom</span>(<span class="tk-str">"DMSans-Light"</span>,         size: <span class="tk-num">16</span>)
+  <span class="tk-key">static let</span> <span class="tk-prop">mono</span>    = <span class="tk-typ">Font</span>.<span class="tk-prop">custom</span>(<span class="tk-str">"JetBrainsMono-Regular"</span>, size: <span class="tk-num">14</span>)
+}</pre>
+      </div>
+
+      <div class="token-card reveal" style="transition-delay:.08s">
+        <div class="token-lang">
+          <span class="token-dot css"></span>
+          <span class="token-name">tokens.css · Web</span>
+        </div>
+<pre class="token-code"><span class="tk-com">/* Swifty Devs · brand tokens */</span>
+<span class="tk-key">:root</span> {
+  <span class="tk-com">/* Neutrales */</span>
+  <span class="tk-prop">--carbon</span>:        <span class="tk-num">#0A0A0A</span>;
+  <span class="tk-prop">--obsidian</span>:      <span class="tk-num">#1C1C1E</span>;
+  <span class="tk-prop">--ivory</span>:         <span class="tk-num">#F2F2F7</span>;
+
+  <span class="tk-com">/* Acento */</span>
+  <span class="tk-prop">--swift-orange</span>:  <span class="tk-num">#FF6B35</span>;
+  <span class="tk-prop">--glow</span>:          <span class="tk-num">#FF8C5A</span>;
+
+  <span class="tk-com">/* Tipografía */</span>
+  <span class="tk-prop">--font-display</span>:  <span class="tk-str">'Playfair Display'</span>, serif;
+  <span class="tk-prop">--font-body</span>:     <span class="tk-str">'DM Sans'</span>, sans-serif;
+  <span class="tk-prop">--font-mono</span>:     <span class="tk-str">'JetBrains Mono'</span>, monospace;
+
+  <span class="tk-com">/* Radio &amp; sombra */</span>
+  <span class="tk-prop">--radius-card</span>:   <span class="tk-num">16px</span>;
+  <span class="tk-prop">--shadow-soft</span>:   <span class="tk-num">0 8px 24px</span> rgba(<span class="tk-num">0,0,0,0.08</span>);
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TONO DE VOZ -->
 <section id="voz" class="section-voice">
   <div class="voice-inner">
@@ -1534,6 +1790,52 @@
         <li>Tipografía DM Sans en todas las jerarquías</li>
         <li>Sin plantillas genéricas que rompan la identidad</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- APP ICON SYSTEM -->
+  <div class="app-icon-block reveal">
+    <div class="app-icon-head">
+      <p class="section-label">Sistema App Icon</p>
+      <h3>El isotipo como <em>app icon.</em></h3>
+      <p>Tres variantes oficiales del ícono de aplicación, con squircle iOS (radio de esquina 22.5% del lado). El isotipo ocupa el 70% del lienzo para conservar la zona de exclusión a escala.</p>
+    </div>
+
+    <div class="app-icon-grid">
+      <div class="app-icon-card">
+        <div class="app-icon dark">
+          <img src="LOGO_MARCa-removebg-preview.png" class="app-icon-bird" alt="">
+        </div>
+        <div class="app-icon-meta">
+          <p>Versión Dark</p>
+          <span>BG · Carbon</span>
+        </div>
+      </div>
+
+      <div class="app-icon-card">
+        <div class="app-icon orange">
+          <img src="LOGO_MARCa-removebg-preview.png" class="app-icon-bird" alt="">
+        </div>
+        <div class="app-icon-meta">
+          <p>Versión Primaria</p>
+          <span>BG · Swift Orange → Glow</span>
+        </div>
+      </div>
+
+      <div class="app-icon-card">
+        <div class="app-icon light">
+          <img src="LOGO_MARCa-removebg-preview.png" class="app-icon-bird" alt="">
+        </div>
+        <div class="app-icon-meta">
+          <p>Versión Light</p>
+          <span>BG · White</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-icon-sizes">
+      <span class="sizes-label">Sizes · iOS</span>
+      <span class="sizes-list">1024 · 180 · 167 · 152 · 120 · 87 · 80 · 76 · 60 · 58 · 40 · 29</span>
     </div>
   </div>
 </section>
