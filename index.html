@@ -918,6 +918,7 @@
     transition: transform 0.2s ease, background 0.2s ease;
   }
   .pdf-btn:hover { background: var(--orange); transform: translateY(-2px); }
+  .pdf-btn, .pdf-btn:visited { text-decoration: none; color: var(--white); }
   .pdf-btn .pdf-arrow {
     font-family: var(--font-mono); font-size: 14px; line-height: 1;
   }
@@ -998,10 +999,14 @@
 <body>
 
 <!-- BOTÓN PDF -->
-<button class="pdf-btn" onclick="window.print()" title="Descargar como PDF" aria-label="Descargar como PDF">
+<a class="pdf-btn"
+   href="swifty-devs-manual.pdf"
+   download="Swifty-Devs-Manual-de-Marca.pdf"
+   title="Descargar manual en PDF"
+   aria-label="Descargar manual en PDF">
   <span class="pdf-arrow">↓</span>
   Descargar PDF
-</button>
+</a>
 
 <!-- NAV -->
 <nav id="top-nav">
